@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stake Secret Bonus</title>
+    <style>
+        body {
+            font-family: "Open Sans", sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            user-select: none; /* Disable text selection */
+        }
+
+        .container {
+            max-width: 600px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #495057;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-size: 18px;
+            color: #495057;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 200px; /* Adjusted width to make it smaller */
+            padding: 10px;
+            margin: 5px auto; /* Center the input vertically */
+            display: block; /* Ensure input takes full width */
+            border: 1px solid #adb5bd;
+            border-radius: 15px;
+            background-color: #dee2e6;
+            color: #495057;
+            font-weight: bold; /* Make input text bold */
+            text-align: center; /* Start text input from the center */
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 15px;
+            background-color: #6c757d;
+            color: #f8f9fa;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: auto; /* Adjust width to content */
+            margin: 5px; /* Add minimal margin around the button */
+        }
+
+        button:hover {
+            background-color: #495057;
+        }
+
+        p#result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #343a40;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            font-weight: bold;
+        }
+
+        p#result.visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stake Secret Bonus</h1>
+        <form id="stakeForm">
+            <label for="username">Enter your Stake username:</label>
+            <input type="text" id="username" name="entry.1000407979" required>
+            <button type="submit">Get Secret Bonus</button>
+        </form>
+        <p id="result" class="hidden">Congratulations! You've unlocked the secret bonus!</p>
+    </div>
+
+    <script>
+        document.getElementById("stakeForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Redirect to stake.com
+            window.location.href = "https://playstake.club/bonus?code=BoostWeekly4243C";
+        });
+    </script>
+</body>
+</html>
